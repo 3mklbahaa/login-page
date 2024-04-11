@@ -13,6 +13,16 @@ function togglePasswordVisibility() {
   }
 }
 
-function redirectToMainPage() {
-  window.location.href = "mainpage.html"; // Change the URL to the desired destination
-}
+document.getElementById("signupLink").addEventListener("click", function(event) {
+  event.preventDefault(); // Prevent default anchor behavior
+  document.getElementById("loginForm").style.display = "none";
+  document.getElementById("signupForm").style.display = "block";
+  document.getElementById("Login-Signup").innerHTML = "Sign up";
+});
+
+document.getElementById("loginLink").addEventListener("click", function(event) {
+  event.preventDefault(); // Prevent default anchor behavior
+  document.getElementById("signupForm").style.display = "none";
+  document.getElementById("loginForm").style.display = "block";
+  document.getElementById("Login-Signup").innerHTML = "log in";
+});
